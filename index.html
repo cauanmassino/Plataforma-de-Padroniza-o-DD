@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plataforma dd</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <header class="menu">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="logo.png" alt="Logo">
+        </div>
+      
+        <!-- Barra de Pesquisa -->
+        <div class="search-container">
+          <form action="/pesquisa" method="GET" class="search-form">
+            <input type="text" name="query" placeholder="Pesquisar...">
+            <button type="submit" class="search-button">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+        </div>
+      
+        <!-- Botão Setor -->
+        <div class="setor-container">
+          <button class="setor-button" id="setorButton">Setor</button>
+          <div class="dropdown-list" id="dropdownList">
+            <ul>
+              <li class="setor-item">
+                <button class="setor-link">Setor 1</button>
+                <ul class="sub-dropdown">
+                  <li><a href="#">Vídeo de Setor 1 - Chamado 1</a></li>
+                  <li><a href="#">Vídeo de Setor 1 - Chamado 2</a></li>
+                </ul>
+              </li>
+              <li class="setor-item">
+                <button class="setor-link">Setor 2</button>
+                <ul class="sub-dropdown">
+                  <li><a href="#">Vídeo de Setor 2 - Chamado 1</a></li>
+                  <li><a href="#">Vídeo de Setor 2 - Chamado 2</a></li>
+                </ul>
+              </li>
+              <li class="setor-item">
+                <button class="setor-link">Setor 3</button>
+                <ul class="sub-dropdown">
+                  <li><a href="#">Vídeo de Setor 3 - Chamado 1</a></li>
+                  <li><a href="#">Vídeo de Setor 3 - Chamado 2</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      
+
+  <script src="scripts.js"></script>
+</body>
+</html>
