@@ -1,0 +1,284 @@
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  main {
+    flex: 1; /* Faz o conteúdo principal ocupar o espaço disponível */
+   }
+   
+   /* Menu principal */
+   .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribui os itens */
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: rgb(0, 0, 0);
+    flex-wrap: wrap;
+    position: relative; /* Necessário para o posicionamento do botão de configuração */
+    width: 100%;
+   }
+   
+   /* Logo */
+   .logo {
+    display: flex;
+    align-items: center;
+   }
+   
+   .logo img {
+    height: 45px;
+   }
+   
+   /* Botão de Configuração */
+   .config-container {
+    position: absolute; /* Garante que o botão fique no extremo direito */
+    top: 10px; /* Alinha verticalmente */
+    right: 20px; /* Distância da borda direita */
+   }
+   
+   .config-button {
+    background-color: white;
+    border: none;
+    padding: 0.5px 7px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #007BFF;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+   }
+   
+   /*Estilização do icone do botão de configuração*/
+   .config-button:hover {
+    background-color: #0056b3;
+    color: white;
+   }
+   
+   .config-button i {
+    font-size: 24px; /* Tamanho do ícone */
+   }
+   
+   /* Estilos do Dropdown */
+   .dropdown-menu {
+    background-color: rgba(230, 230, 230, 0.95);
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(199, 20, 20, 0.1);
+    border: none;
+    width: 180px;
+   }
+   
+   .dropdown-item {
+    padding: 10px;
+    color: #007BFF;
+    transition: background-color 0.3s ease-in-out;
+   }
+   
+   .dropdown-item:hover {
+    background-color: #007BFF;
+    color: white;
+   }
+   
+   /* Estilização do Search Container */
+   .search-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%; /* Garante que o container ocupe toda a largura */
+    margin-top: 20px; /* Espaço superior */
+   }
+   
+   /* Barra de pesquisa */
+   .search-form .form-control {
+    border-radius: 20px 0 0 20px; /* Bordas arredondadas apenas à esquerda */
+    border: 1px solid #ccc;
+    box-shadow: none; /* Remove sombras padrão */
+    font-size: 16px;
+    padding: 20px 85px; /* Aumenta o espaçamento interno */
+   }
+   
+   .search-form .form-control:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adiciona um efeito ao focar */
+   }
+   
+   .search-form .btn {
+    border-radius: 0 20px 20px 0; /* Bordas arredondadas apenas à direita */
+    padding: 5px 20px;
+    font-size: 16px;
+    background-color: #0076c5;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+    color: white;
+   }
+   
+   .search-form .btn:hover {
+    background-color: #0056b3;
+   }
+   
+   .search-form .btn i {
+    font-size: 18px; /* Ajusta o tamanho do ícone */
+   }
+   
+   /* Botão Setor */
+   .setor-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0 20px;
+   }
+   
+   .setor-button {
+    background-color: white;
+    color: #007BFF;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+   }
+   
+   .setor-button:hover {
+    background-color: #f0f0f0;
+    border-color: #007BFF;
+   }
+   
+   
+   /* Dropdown botao setor */
+   .dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.952);
+    top: 100%;
+    left: 0;
+    width: 200px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(218, 15, 15, 0.1); /*Sombra*/
+    z-index: 1000;
+    padding: 10px;
+   }
+   
+   /* Responsividade */
+   @media (max-width: 768px) {
+    .menu {
+     flex-direction: column;
+     align-items: center; /* Garante que todos os itens fiquem centralizados */
+    }
+   
+    .search-container {
+     width: 100%;
+     margin: 10px 0;
+    }
+   
+    .setor-container {
+     width: 100%; /* Ocupa toda a largura */
+     margin-top: 10px;
+    }
+   
+    .setor-button {
+     width: 100%; /* Botão ocupa largura total */
+     max-width: 300px; /* Define um limite */
+    }
+   }
+   
+   /* Botão Setor abaixo da barra de pesquisa em telas grandes */
+   @media (min-width: 768px) {
+    .setor-container {
+     margin-top: 20px; /* Espaço entre a barra de pesquisa e o botão Setor */
+     display: flex;
+     justify-content: center; /* Centraliza o botão Setor */
+     width: 100%; /* Garante largura total para o alinhamento */
+    }
+   
+    .setor-button {
+     max-width: 200px; /* Define um tamanho máximo para o botão em telas grandes */
+    }
+   }
+   
+  
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilo do cabeçalho */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff0000;
+  }
+  
+  header .search-bar {
+    width: 500px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+  
+  /* Estilo da lista de vídeos */
+  .video-list {
+    padding: 20px;
+  }
+  
+  .video-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .video-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .thumbnail {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .video-info {
+    flex-grow: 1;
+  }
+  
+  .video-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .video-channel {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .video-views {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  
