@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styleslogin.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Welcome</h1>
+      <div class="logo">A</div>
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="johndoe@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <i class="toggle-password">👁️</i>
+          </div>
+        </div>
+        <button type="submit" class="btn-login">LOGIN</button>
+      </form>
+      <p class="signup-text">Don't have an account? <a href="#">Sign Up</a></p>
+    </div>
+  </div>
+</body>
+</html>

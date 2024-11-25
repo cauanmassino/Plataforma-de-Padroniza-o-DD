@@ -235,49 +235,90 @@ h1 {
   font-weight: bold;
 }
 
-/* Estilo da lista de vídeos */
-.video-list {
-  padding: 20px;
-}
-
-/* Separação minimalista entre vídeos */
-.video-item {
+/* Seçao video*/
+/* Conteúdo principal */
+.content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 15px 0;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 20px;
+  gap: 20px;
 }
 
-.video-item:last-child {
-  border-bottom: none;
+/* Seção de vídeo */
+.video-section {
+  width: 100%;
+  max-width: 800px;
 }
 
-.thumbnail {
-  width: 120px;
-  height: 80px;
-  object-fit: cover;
-  margin-right: 15px;
-}
-
-.video-info {
-  flex-grow: 1;
+.video-container video {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .video-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 1.5rem;
+  margin: 10px 0;
 }
 
-.video-channel {
-  font-size: 14px;
+.video-description {
   color: #555;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-.video-views {
-  font-size: 14px;
-  color: #888;
+.video-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-action {
+  background-color: #e8e8e8;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-action:hover {
+  background-color: #d0d0d0;
+}
+
+/* Comentários */
+.comments h2 {
+  margin: 20px 0 10px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.btn-comment {
+  background-color: #1a73e8;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comment-list li {
+  margin: 10px 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
 }
 
 /* Rodapé personalizado */

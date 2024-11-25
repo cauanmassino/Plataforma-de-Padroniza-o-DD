@@ -1,52 +1,57 @@
+/* Importação da fonte IBM Plex Sans */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap');
+
 /* Geral */
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+  min-height: 100vh;
   margin: 0;
- }
- 
- * {
+  font-family: 'IBM Plex Sans', sans-serif !important; /* Aplica a fonte globalmente */
+  font-weight: 700; /* Define o peso padrão da fonte */
+}
+
+* {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
- }
- 
- main {
-  flex: 1; /* Faz o conteúdo principal ocupar o espaço disponível */
- }
- 
- /* Menu principal */
- .menu {
+  box-sizing: border-box;
+}
+
+main {
+  flex: 1;
+}
+
+/* Menu principal */
+.menu {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Distribui os itens */
+  justify-content: space-between;
   padding: 10px 20px;
-  background-color: #007BFF;
+  background-color: #2A54CC;
   color: rgb(0, 0, 0);
   flex-wrap: wrap;
-  position: relative; /* Necessário para o posicionamento do botão de configuração */
   width: 100%;
- }
- 
- /* Logo */
- .logo {
+}
+
+/* Logo */
+.logo {
   display: flex;
   align-items: center;
- }
- 
- .logo img {
-  height: 45px;
- }
- 
- /* Botão de Configuração */
- .config-container {
-  position: absolute; /* Garante que o botão fique no extremo direito */
-  top: 10px; /* Alinha verticalmente */
-  right: 20px; /* Distância da borda direita */
- }
- 
- .config-button {
+}
+
+.logo img {
+  max-width: 210px;
+  height: auto;
+}
+
+/* Botão de Configuração */
+.config-container {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.config-button {
   background-color: white;
   border: none;
   padding: 3px 8px;
@@ -56,207 +61,238 @@ body {
   align-items: center;
   justify-content: center;
   color: #007BFF;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
- }
- 
- /*Estilização do icone do botão de configuração*/
- .config-button:hover {
+}
+
+.config-button:hover {
   background-color: #0056b3;
   color: white;
- }
- 
- .config-button i {
-  font-size: 25px; /* Tamanho do ícone */
- }
- 
- /* Estilos do Dropdown */
- .dropdown-menu {
-  background-color: rgba(230, 230, 230, 0.95);
-  border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(199, 20, 20, 0.1);
-  border: none;
-  width: 180px;
 }
 
-.dropdown-item {
-  padding: 10px;
-  color: #007BFF;
-  transition: background-color 0.3s ease-in-out;
+.config-button i {
+  font-size: 25px;
 }
 
-.dropdown-item:hover {
-  background-color: #007BFF;
-  color: white;
-}
-
- 
- /* Estilização do Search Container */
- .search-container {
+/* Barra de Pesquisa e Botão Setor - Centralizados */
+.search-and-setor-container {
   display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  width: 100%; /* Garante que o container ocupe toda a largura */
-  margin-top: 20px; /* Espaço superior */
- }
- 
- /* Barra de pesquisa */
- .search-form .form-control {
-  border-radius: 20px 0 0 20px; /* Bordas arredondadas apenas à esquerda */
-  border: 1px solid #ccc;
-  box-shadow: none; /* Remove sombras padrão */
-  font-size: 16px;
-  padding: 20px 85px; /* Aumenta o espaçamento interno */
- }
- 
- .search-form .form-control:focus {
-  border-color: #007BFF;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adiciona um efeito ao focar */
- }
- 
- .search-form .btn {
-  border-radius: 0 20px 20px 0; /* Bordas arredondadas apenas à direita */
-  padding: 5px 20px;
-  font-size: 16px;
-  background-color: #0076c5;
-  border: none;
-  transition: background-color 0.3s ease-in-out;
-  color: white;
- }
- 
- .search-form .btn:hover {
-  background-color: #0056b3;
- }
- 
- .search-form .btn i {
-  font-size: 18px; /* Ajusta o tamanho do ícone */
- }
- 
- /* Botão Setor */
- .setor-container {
-  width: 100%;
-  display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 20px;
+  width: 100%;
   margin-top: 20px;
-  padding: 0 20px;
- }
- 
- .setor-button {
+}
+
+/* Posicionamento do Setor */
+.setor-container {
+  position: relative;
+}
+
+.setor-button {
   background-color: white;
   color: #007BFF;
   border: 1px solid #ccc;
-  padding: 10px 15px;
-  border-radius: 4px;
+  padding: 10px 35px;
+  border-radius: 18px;
   cursor: pointer;
   font-weight: bold;
   text-align: center;
-  width: 100%;
-  max-width: 200px;
- }
- 
- .setor-button:hover {
+}
+
+.setor-button:hover {
   background-color: #f0f0f0;
   border-color: #007BFF;
- }
- 
- 
- /* Dropdown botao setor */
- .dropdown-list {
-  display: none;
-  position: absolute; /* Dropdown aparece abaixo do botão */
-  top: 100%; /* Alinha o dropdown abaixo do botão */
-  left: 0;
-  width: 200px;
-  background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Barra de Pesquisa */
+.search-container {
+  flex-grow: 1;
+}
+
+.search-form .form-control {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  padding: 20px 25px;
+}
+
+.search-form .form-control:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-form .btn {
+  border-radius: 0 20px 20px 0;
+  background-color: #0076c5;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.search-form .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Dropdown do botão Setor */
+/* Configuração geral do dropdown */
+.dropdown-list {
+  display: none; /* Inicialmente escondido */
+  position: absolute; /* Fixa em relação ao botão */
+  top: 100%; /* Coloca abaixo do botão */
+  left: 0; /* Alinha à esquerda do botão */
+  width: 200px; /* Define a largura do menu */
+  background-color: #fff; /* Fundo branco */
+  border: 1px solid #ccc; /* Adiciona borda */
+  border-radius: 4px; /* Cantos arredondados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+  z-index: 1000; /* Garante que esteja acima de outros elementos */
+  padding: 0; /* Remove padding adicional */
+}
+
+/* Remove os marcadores das listas */
+.dropdown-list ul {
+  list-style: none; /* Remove marcadores */
+  margin: 0; /* Remove margens */
+  padding: 0; /* Remove paddings */
+}
+
+/* Estilo para os itens da lista */
+.dropdown-list ul li {
+  padding: 10px 15px; /* Espaçamento interno */
+  border-bottom: 1px solid #e9e9e9; /* Linha entre itens */
+}
+
+.dropdown-list ul li:last-child {
+  border-bottom: none; /* Remove linha do último item */
+}
+
+/* Links e botões */
+.dropdown-list ul li a,
+.dropdown-list ul li button {
+  text-decoration: none; /* Remove sublinhado */
+  color: #007BFF; /* Cor padrão do texto */
+  font-weight: bold; /* Texto em negrito */
+  width: 100%;
+  display: block; /* Torna clicável em toda a largura */
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-list ul li a:hover,
+.dropdown-list ul li button:hover {
+  background-color: #f0f0f0; /* Fundo ao passar o mouse */
+  color: #0056b3; /* Cor do texto ao passar o mouse */
+}
+
+/* Exibe o dropdown quando ativo */
+.setor-container:hover .dropdown-list {
+  display: block; /* Torna visível ao passar o mouse */
+}
+
+.setor-container {
+  position: relative;
+}
+
+/* Sub-dropdown (menus internos) */
+.sub-dropdown {
+  display: none; /* Inicia escondido */
+  position: absolute;
+  left: 100%; /* Aparece ao lado do botão */
+  top: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  padding: 10px;
+  padding: 10px 0;
+  width: 200px;
 }
 
-/* Sub-Dropdown */
-.sub-dropdown {
-  display: none;
-  padding-left: 10px;
+.sub-dropdown li {
+  padding: 5px 15px;
 }
- 
- /* Responsividade */
- @media (max-width: 768px) {
+
+.sub-dropdown li a {
+  text-decoration: none;
+  color: #007BFF;
+  display: block;
+  font-weight: bold;
+}
+
+.sub-dropdown li a:hover {
+  background-color: #f0f0f0;
+  color: #0056b3;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
   .menu {
-   flex-direction: column;
-   align-items: center; /* Garante que todos os itens fiquem centralizados */
+    flex-direction: column;
+    align-items: center;
   }
- 
-  .search-container {
-   width: 100%;
-   margin: 10px 0;
+
+  .search-and-setor-container {
+    flex-direction: row;
+    gap: 15px;
+    justify-content: flex-start;
+    width: 100%;
   }
- 
-  .setor-container {
-   width: 100%; /* Ocupa toda a largura */
-   margin-top: 10px;
-  }
- 
+
   .setor-button {
-   width: 100%; /* Botão ocupa largura total */
-   max-width: 300px; /* Define um limite */
+    width: auto;
+    max-width: 150px;
+    margin-right: 10px;
   }
- }
- 
- /* Botão Setor abaixo da barra de pesquisa em telas grandes */
- @media (min-width: 768px) {
-  .setor-container {
-   margin-top: 20px; /* Espaço entre a barra de pesquisa e o botão Setor */
-   display: flex;
-   justify-content: center; /* Centraliza o botão Setor */
-   width: 100%; /* Garante largura total para o alinhamento */
+
+  .search-form .form-control {
+    width: 100%;
   }
- 
-  .setor-button {
-   max-width: 200px; /* Define um tamanho máximo para o botão em telas grandes */
-  }
- }
- 
- /* Rodapé personalizado */
- .custom-footer {
-  background-color: #007BFF; /* Cor azul */
+}
+
+/* Rodapé personalizado */
+.custom-footer {
+  background-color: #2A54CC;
   color: white;
   text-align: center;
-  padding: 60px 20px 20px; /* Espaço interno */
+  padding: 60px 20px 20px;
   margin-top: 50px;
- }
- 
- .footer-content {
-  margin-top: 30px; /* Garante espaço interno do texto */
- }
- 
- .footer-content h2 {
+}
+
+.footer-content {
+  margin-top: 30px;
+}
+
+.footer-content h2 {
   font-size: 24px;
   font-weight: bold;
   margin: 10px 0;
- }
- 
- .footer-content h3 {
+}
+
+.footer-content h3 {
   font-size: 18px;
   margin: 5px 0;
- }
- 
- .footer-content p {
+}
+
+.footer-content p {
   font-size: 14px;
   margin: 10px 0;
   line-height: 1.6;
- }
- 
- /* Responsividade do rodapé */
- @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
   .footer-content h2 {
-   font-size: 20px;
+    font-size: 20px;
   }
   .footer-content h3 {
-   font-size: 16px;
+    font-size: 16px;
   }
   .footer-content p {
-   font-size: 12px;
+    font-size: 12px;
   }
- }
- 
- 
+}
