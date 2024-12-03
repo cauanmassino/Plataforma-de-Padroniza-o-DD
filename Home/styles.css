@@ -3,296 +3,405 @@
 
 /* Geral */
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  font-family: 'IBM Plex Sans', sans-serif !important; /* Aplica a fonte globalmente */
-  font-weight: 700; /* Define o peso padrão da fonte */
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+ margin: 0;
+ font-family: 'IBM Plex Sans', sans-serif !important; /* Aplica a fonte globalmente */
+ font-weight: 700; /* Define o peso padrão da fonte */
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
 }
 
 main {
-  flex: 1;
+ flex: 1;
 }
 
 /* Menu principal */
 .menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #2A54CC;
-  color: rgb(0, 0, 0);
-  flex-wrap: wrap;
-  width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 10px 20px;
+ background-color: #2A54CC;
+ color: rgb(0, 0, 0);
+ width: 100%;
 }
 
 /* Logo */
 .logo {
-  display: flex;
-  align-items: center;
+ display: flex;
+ align-items: center;
 }
 
 .logo img {
-  max-width: 210px;
-  height: auto;
+ max-width: 210px;
+ height: auto;
 }
 
 /* Botão de Configuração */
 .config-container {
-  position: absolute;
-  top: 10px;
-  right: 20px;
+ position: absolute;
+ top: 10px;
+ right: 20px;
 }
 
 .config-button {
-  background-color: white;
-  border: none;
-  padding: 3px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #007BFF;
+ background-color: white;
+ border: none;
+ padding: 3px 8px;
+ border-radius: 4px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ color: #007BFF;
 }
 
 .config-button:hover {
-  background-color: #0056b3;
-  color: white;
+ background-color: #0056b3;
+ color: white;
 }
 
 .config-button i {
-  font-size: 25px;
+ font-size: 25px;
 }
 
 /* Barra de Pesquisa e Botão Setor - Centralizados */
 .search-and-setor-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-  margin-top: 20px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 20px;
+ width: 100%;
+ margin-top: 20px;
 }
 
 /* Posicionamento do Setor */
 .setor-container {
-  position: relative;
+ position: relative;
 }
 
 .setor-button {
-  background-color: white;
-  color: #007BFF;
-  border: 1px solid #ccc;
-  padding: 10px 35px;
-  border-radius: 18px;
-  cursor: pointer;
-  font-weight: bold;
-  text-align: center;
+ background-color: white;
+ color: #007BFF;
+ border: 1px solid #ccc;
+ padding: 10px 35px;
+ border-radius: 18px;
+ cursor: pointer;
+ font-weight: bold;
+ text-align: center;
 }
 
 .setor-button:hover {
-  background-color: #f0f0f0;
-  border-color: #007BFF;
+ background-color: #f0f0f0;
+ border-color: #007BFF;
 }
 
 /* Barra de Pesquisa */
-.search-container {
-  flex-grow: 1;
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .search-form {
+    display: flex; /* Garante que o campo e o botão fiquem alinhados */
+    flex-direction: row; /* Organiza em linha */
+    align-items: center;
+    width: 100%; /* Ocupa a largura total */
+    gap: 10px; /* Espaçamento entre o campo e o botão */
+  }
+
+  .search-form .form-control {
+    flex: 1; /* Faz o campo de pesquisa ocupar o máximo de espaço possível */
+    border-radius: 20px; /* Deixa o campo redondo */
+    padding: 10px 15px; /* Ajusta o espaçamento interno */
+  }
+
+  .search-form .btn {
+    flex-shrink: 0; /* Impede que o botão redimensione */
+    padding: 10px 15px; /* Ajusta o tamanho do botão */
+    border-radius: 20px; /* Deixa o botão redondo */
+  }
 }
 
-.search-form .form-control {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 20px 0 0 20px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  padding: 20px 25px;
-}
-
-.search-form .form-control:focus {
-  border-color: #007BFF;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.search-form .btn {
-  border-radius: 0 20px 20px 0;
-  background-color: #0076c5;
-  border: none;
-  color: white;
-  padding: 10px 15px;
-  font-size: 16px;
-}
-
-.search-form .btn:hover {
-  background-color: #0056b3;
-}
 
 /* Dropdown do botão Setor */
 /* Configuração geral do dropdown */
 .dropdown-list {
-  display: none; /* Inicialmente escondido */
-  position: absolute; /* Fixa em relação ao botão */
-  top: 100%; /* Coloca abaixo do botão */
-  left: 0; /* Alinha à esquerda do botão */
-  width: 200px; /* Define a largura do menu */
-  background-color: #fff; /* Fundo branco */
-  border: 1px solid #ccc; /* Adiciona borda */
-  border-radius: 4px; /* Cantos arredondados */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-  z-index: 1000; /* Garante que esteja acima de outros elementos */
-  padding: 0; /* Remove padding adicional */
+ display: none; /* Inicialmente escondido */
+ position: absolute; /* Fixa em relação ao botão */
+ top: 100%; /* Coloca abaixo do botão */
+ left: 0; /* Alinha à esquerda do botão */
+ width: 200px; /* Define a largura do menu */
+ background-color: #fff; /* Fundo branco */
+ border: 1px solid #ccc; /* Adiciona borda */
+ border-radius: 4px; /* Cantos arredondados */
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+ z-index: 1000; /* Garante que esteja acima de outros elementos */
+ padding: 0; /* Remove padding adicional */
 }
 
 /* Remove os marcadores das listas */
 .dropdown-list ul {
-  list-style: none; /* Remove marcadores */
-  margin: 0; /* Remove margens */
-  padding: 0; /* Remove paddings */
+ list-style: none; /* Remove marcadores */
+ margin: 0; /* Remove margens */
+ padding: 0; /* Remove paddings */
 }
 
 /* Estilo para os itens da lista */
 .dropdown-list ul li {
-  padding: 10px 15px; /* Espaçamento interno */
-  border-bottom: 1px solid #e9e9e9; /* Linha entre itens */
+ padding: 10px 15px; /* Espaçamento interno */
+ border-bottom: 1px solid #e9e9e9; /* Linha entre itens */
 }
 
 .dropdown-list ul li:last-child {
-  border-bottom: none; /* Remove linha do último item */
+ border-bottom: none; /* Remove linha do último item */
 }
 
 /* Links e botões */
 .dropdown-list ul li a,
 .dropdown-list ul li button {
-  text-decoration: none; /* Remove sublinhado */
-  color: #007BFF; /* Cor padrão do texto */
-  font-weight: bold; /* Texto em negrito */
-  width: 100%;
-  display: block; /* Torna clicável em toda a largura */
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+ text-decoration: none; /* Remove sublinhado */
+ color: #414040e3; /* Cor padrão do texto */
+ font-weight: bold; /* Texto em negrito */
+ width: 100%;
+ display: block; /* Torna clicável em toda a largura */
+ background: none;
+ border: none;
+ text-align: left;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
 }
 
 .dropdown-list ul li a:hover,
 .dropdown-list ul li button:hover {
-  background-color: #f0f0f0; /* Fundo ao passar o mouse */
-  color: #0056b3; /* Cor do texto ao passar o mouse */
+ background-color: #f0f0f0; /* Fundo ao passar o mouse */
+ color: #0056b3; /* Cor do texto ao passar o mouse */
 }
 
 /* Exibe o dropdown quando ativo */
 .setor-container:hover .dropdown-list {
-  display: block; /* Torna visível ao passar o mouse */
+ display: block; /* Torna visível ao passar o mouse */
 }
 
 .setor-container {
-  position: relative;
+ position: relative;
 }
 
 /* Sub-dropdown (menus internos) */
 .sub-dropdown {
-  display: none; /* Inicia escondido */
-  position: absolute;
-  left: 100%; /* Aparece ao lado do botão */
-  top: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  padding: 10px 0;
-  width: 200px;
+ display: none; /* Inicia escondido */
+ position: absolute;
+ left: 100%; /* Aparece ao lado do botão */
+ top: 0;
+ background-color: #fff;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ z-index: 1000;
+ padding: 10px 0;
+ width: 200px;
 }
 
 .sub-dropdown li {
-  padding: 5px 15px;
+ padding: 5px 15px;
 }
 
 .sub-dropdown li a {
-  text-decoration: none;
-  color: #007BFF;
-  display: block;
-  font-weight: bold;
+ text-decoration: none;
+ color: #007BFF;
+ display: block;
+ font-weight: bold;
 }
 
 .sub-dropdown li a:hover {
-  background-color: #f0f0f0;
-  color: #0056b3;
+ background-color: #f0f0f0;
+ color: #0056b3;
 }
 
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .menu {
+ .menu {
+  flex-direction: column;
+  align-items: center;
+ }
+
+ .search-and-setor-container {
+  flex-direction: row;
+  gap: 15px;
+  justify-content: flex-start;
+  width: 100%;
+ }
+
+ .setor-button {
+  width: auto;
+  max-width: 150px;
+  margin-right: 10px;
+ }
+
+ .search-form .form-control {
+  width: 100%;
+ }
+}
+
+/* Estilo do título */
+h1 {
+ font-size: 2.5rem;
+ color: #1c07d6;
+ text-align: center;
+ margin: 20px 0;
+ font-family: 'IBM Plex Sans', sans-serif; /* Nova fonte aplicada */
+ font-weight: bold;
+}
+
+/* Cards */
+.card-container {
+ display: flex;
+ flex-wrap: wrap; /* Faz os cards quebrarem para a próxima linha se não houver mais espaço */
+ gap: 1rem; /* Espaçamento entre os cards */
+ justify-content: space-between; /* Distribui os cards igualmente dentro do container */
+}
+
+.card {
+ text-align: center;
+ margin-bottom: 20px;
+ border: none; /* Remove a borda padrão do card */
+ transition: all 0.3s ease; /* Transição suave para todos os efeitos */
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar a sensação de flutuação */
+}
+
+/* Quando o mouse passar sobre o card */
+.card:hover {
+ transform: translateY(-10px); /* Move o card para cima */
+ box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2); /* Aumenta a sombra para dar um efeito mais destacado */
+}
+
+
+
+/* Estilo do modal */
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.9); /* Modal com leve transparência */
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+/* Responsividade para dispositivos móveis (telas menores que 768px) */
+@media (max-width: 768px) {
+
+  /* Ajustando logo para telas pequenas */
+  .logo img {
+    width: 150px; /* Ajuste do tamanho da logo */
+  }
+
+  /* Ajustando a barra de pesquisa */
+  .search-form {
     flex-direction: column;
+    width: 100%;  /* Ocupa 100% da largura da tela */
     align-items: center;
+    margin-top: 20px;
   }
 
-  .search-and-setor-container {
-    flex-direction: row;
-    gap: 15px;
-    justify-content: flex-start;
+  /* Ajustando os cards para telas pequenas */
+  .col-lg-4, .col-md-6 {
+    width: 100%;  /* Cada card ocupará toda a largura da tela */
+    margin-bottom: 15px;  /* Espaçamento entre os cards */
+  }
+
+  /* Tornando os botões mais largos e alinhados */
+  .btn {
     width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    margin: 5px 0;
   }
 
-  .setor-button {
-    width: auto;
-    max-width: 150px;
-    margin-right: 10px;
+  /* Ajustando a área do setor */
+  .setor-container {
+    width: 100%; /* Ocupa 100% da tela */
+    margin-top: 15px;
   }
-
-  .search-form .form-control {
-    width: 100%;
+  
+  /* Ajustando o rodapé para ser centralizado e adaptável */
+  .custom-footer .footer-content {
+    text-align: center;
+    padding: 10px;
   }
 }
+
+/* Responsividade para dispositivos de tela grande (acima de 768px) */
+@media (min-width: 769px) {
+  
+  .col-lg-4 {
+    width: 30%;  /* Cards ocuparão 30% da largura da tela */
+  }
+
+  /* Ajustando o botão do setor */
+  .setor-container {
+    width: 150px;
+  }
+
+  .search-form {
+    width: 60%;  /* Barra de pesquisa ocupará 60% da tela */
+  }
+
+  /* Ajuste do layout para telas grandes */
+  .btn {
+    padding: 10px 20px;
+  }
+
+  /* Centralizando o conteúdo do footer */
+  .custom-footer .footer-content {
+    text-align: center;
+  }
+}
+
+
+
+
 
 /* Rodapé personalizado */
 .custom-footer {
-  background-color: #2A54CC;
-  color: white;
-  text-align: center;
-  padding: 60px 20px 20px;
-  margin-top: 50px;
+ background-color: #2A54CC;
+ color: white;
+ text-align: center;
+ padding: 60px 20px 20px;
+ margin-top: 50px;
 }
 
 .footer-content {
-  margin-top: 30px;
+ margin-top: 30px;
 }
 
 .footer-content h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 10px 0;
+ font-size: 24px;
+ font-weight: bold;
+ margin: 10px 0;
 }
 
 .footer-content h3 {
-  font-size: 18px;
-  margin: 5px 0;
+ font-size: 18px;
+ margin: 5px 0;
 }
 
 .footer-content p {
-  font-size: 14px;
-  margin: 10px 0;
-  line-height: 1.6;
+ font-size: 14px;
+ margin: 10px 0;
+ line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-  .footer-content h2 {
-    font-size: 20px;
-  }
-  .footer-content h3 {
-    font-size: 16px;
-  }
-  .footer-content p {
-    font-size: 12px;
-  }
+ .footer-content h2 {
+  font-size: 20px;
+ }
+ .footer-content h3 {
+  font-size: 16px;
+ }
+ .footer-content p {
+  font-size: 12px;
+ }
 }
